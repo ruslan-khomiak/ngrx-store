@@ -1,0 +1,32 @@
+{
+  "cars": [
+    {
+      "name": "BMW",
+      "date": "09.12.2018",
+      "model": "x6",
+      "isSold": false,
+      "id": 1
+    },
+    {
+      "name": "Audi",
+      "date": "09.12.2018",
+      "model": "A8",
+      "isSold": true,
+      "id": 2
+    },
+    {
+      "name": "Toyota",
+      "date": "10.12.2018",
+      "model": "Land Cruiser",
+      "isSold": false,
+      "id": 3
+    },
+    {
+      "name": "Ford",
+      "date": "10.12.2018",
+      "model": "Focus",
+      "isSold": false,
+      "id": 4
+    }
+  ]
+}

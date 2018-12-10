@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+app-car {
+  display: block;
+  margin-bottom: 15px;
+}
+
+app-car:last-child {
+  margin-bottom: 0;
+}
