@@ -1,29 +1,29 @@
 {
   "cars": [
     {
+      "date": "10.12.2018",
       "name": "BMW",
-      "date": "09.12.2018",
       "model": "x6",
       "isSold": false,
       "id": 1
     },
     {
+      "date": "10.12.2018",
       "name": "Audi",
-      "date": "09.12.2018",
       "model": "A8",
-      "isSold": true,
+      "isSold": false,
       "id": 2
     },
     {
-      "name": "Toyota",
       "date": "10.12.2018",
-      "model": "Land Cruiser",
-      "isSold": false,
+      "name": "Toyota",
+      "model": "Land Cruiser 200",
+      "isSold": true,
       "id": 3
     },
     {
-      "name": "Ford",
       "date": "10.12.2018",
+      "name": "Ford",
       "model": "Focus",
       "isSold": false,
       "id": 4

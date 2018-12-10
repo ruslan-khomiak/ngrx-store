@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Car } from './car.model';
+import { Car } from '../models';
 
 @Injectable()
 export class CarsService {
@@ -13,7 +13,7 @@ export class CarsService {
     private http: HttpClient,
   ) {}
 
-  loadCars(): Observable<Car[]> {
+  getCars(): Observable<Car[]> {
     return this.http.get<Car[]>(CarsService.BASE_URL + 'cars');
   }
 
