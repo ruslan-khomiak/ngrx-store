@@ -33,6 +33,14 @@ export class AddCarSuccess implements Action {
   ) {}
 }
 
+export class AddCarFailure implements Action {
+  readonly type = ActionTypes.ADD_CAR_FAILURE;
+
+  constructor(
+    public payload: any,
+  ) {}
+}
+
 export class DeleteCar implements Action {
   readonly type = ActionTypes.DELETE_CAR;
 
@@ -46,6 +54,14 @@ export class DeleteCarSuccess implements Action {
 
   constructor(
     public payload: Car,
+  ) {}
+}
+
+export class DeleteCarFailure implements Action {
+  readonly type = ActionTypes.DELETE_CAR_FAILURE;
+
+  constructor(
+    public payload: any,
   ) {}
 }
 
@@ -65,6 +81,14 @@ export class UpdateCarSuccess implements Action {
   ) {}
 }
 
+export class UpdateCarFailure implements Action {
+  readonly type = ActionTypes.UPDATE_CAR_FAILURE;
+
+  constructor(
+    public payload: any,
+  ) {}
+}
+
 export class GetCars implements Action {
   readonly type = ActionTypes.GET_CARS;
 }
@@ -77,12 +101,24 @@ export class GetCarsSuccess implements Action {
   ) {}
 }
 
+export class GetCarsFailure implements Action {
+  readonly type = ActionTypes.GET_CARS_FAILURE;
+
+  constructor(
+    public payload: any,
+  ) {}
+}
+
 export type Actions =
   | GetCars
   | GetCarsSuccess
+  | GetCarsFailure
   | AddCar
   | AddCarSuccess
+  | AddCarFailure
   | UpdateCar
   | UpdateCarSuccess
+  | UpdateCarFailure
   | DeleteCar
-  | DeleteCarSuccess;
+  | DeleteCarSuccess
+  | DeleteCarFailure;

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
 import { switchMap, map, catchError } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { Car } from '../../models';
 import { CarsService } from '../../services/cars.service';
@@ -22,7 +23,7 @@ export class CarsStoreEffects {
         .getCars()
         .pipe(
           map((cars: Car[]) => new carsActions.GetCarsSuccess(cars)),
-          catchError(() => of({})),
+          catchError((error: HttpErrorResponse) => of(new carsActions.GetCarsFailure(error))),
         );
     })
   );
@@ -35,7 +36,7 @@ export class CarsStoreEffects {
         .addCar(car)
         .pipe(
           map((car: Car) => new carsActions.AddCarSuccess(car)),
-          catchError(() => of({})),
+          catchError((error: HttpErrorResponse) => of(new carsActions.AddCarFailure(error))),
         );
     })
   );
@@ -48,7 +49,7 @@ export class CarsStoreEffects {
         .updateCar(car)
         .pipe(
           map((car: Car) => new carsActions.UpdateCarSuccess(car)),
-          catchError(() => of({})),
+          catchError((error: HttpErrorResponse) => of(new carsActions.UpdateCarFailure(error))),
         );
     })
   );
@@ -61,7 +62,7 @@ export class CarsStoreEffects {
         .deleteCar(car)
         .pipe(
           map(() => new carsActions.DeleteCarSuccess(car)),
-          catchError(() => of({})),
+          catchError((error: HttpErrorResponse) => of(new carsActions.DeleteCarFailure(error))),
         );
     })
   );
