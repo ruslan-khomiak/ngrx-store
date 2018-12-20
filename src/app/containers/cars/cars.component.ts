@@ -12,15 +12,13 @@ import { CarsStoreActions, RootStoreState } from '../../root-store';
 
 export class CarsComponent implements OnInit {
 
-  cars$: Observable<Cars>;
+  cars$: Observable<Cars> = this.store.select('cars');
 
   constructor(
     private store: Store<RootStoreState.State>,
   ) {}
 
   ngOnInit(): void {
-    this.cars$ = this.store.select('cars');
-
     this.store.dispatch(new CarsStoreActions.GetCars());
   }
 }
